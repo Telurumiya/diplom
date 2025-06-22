@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocxChecker - Панель администратора</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-primary text-white p-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1>DocxChecker</h1>
+            <a href="/logout" class="btn btn-outline-light">Выйти</a>
+        </div>
+    </header>
+
+    <main class="container mt-4">
+        <h2>Панель администратора</h2>
+
+        <!-- Таблица пользователей -->
+        <section class="mt-4">
+            <h3>Управление пользователями</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Имя пользователя</th>
+                        <th>Email</th>
+                        <th>Роль</th>
+                        <th>Проверен</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="users-table-body">
+                    <!-- Данные будут добавлены через JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Таблица документов -->
+        <section class="mt-4" id="documents-section" style="display: none;">
+            <h3>Документы пользователя <span id="selected-username"></span></h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Имя файла</th>
+                        <th>Статус</th>
+                        <th>Количество ошибок</th>
+                        <th>Дата загрузки</th>
+                    </tr>
+                </thead>
+                <tbody id="documents-table-body">
+                    <!-- Данные будут добавлены через JavaScript -->
+                </tbody>
+            </table>
+            <nav>
+                <ul class="pagination" id="documents-pagination">
+                    <!-- Пагинация будет добавлена через JavaScript -->
+                </ul>
+            </nav>
+        </section>
+    </main>
+
+    <footer class="bg-light text-center p-3 mt-4">
+        <p>© 2025 DocxChecker. Все права защищены.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Загрузка списка пользователей
+        async function loadUsers() {
+            try {
+                const response = await fetch('/api/v1/admin/users', {
+                    headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+                });
+                if (!response.ok) throw new Error('Ошибка загрузки пользователей');
+                const users = await response.json();
+                const tbody = document.getElementById('users-table-body');
+                tbody.innerHTML = '';
+                users.forEach(user => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${user.username}</td>
+                        <td>${user.email}</td>
+                        <td>${user.role_name}</td>
+                        <td>${user.is_verified ? 'Да' : 'Нет'}</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" onclick="loadDocuments(${user.id}, '${user.username}')">
+                                Просмотреть документы
+                            </button>
+                        </td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Ошибка:', error);
+                alert('Не удалось загрузить пользователей');
+            }
+        }
+
+        // Загрузка документов пользователя
+        async function loadDocuments(userId, username, page = 1) {
+            try {
+                const response = await fetch(`/api/v1/admin/users/${userId}/documents?page=${page}&limit=10`, {
+                    headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }
+                });
+                if (!response.ok) throw new Error('Ошибка загрузки документов');
+                const documents = await response.json();
+                const documentsSection = document.getElementById('documents-section');
+                const selectedUsername = document.getElementById('selected-username');
+                const tbody = document.getElementById('documents-table-body');
+                selectedUsername.textContent = username;
+                tbody.innerHTML = '';
+                documents.forEach(doc => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${doc.id}</td>
+                        <td>${doc.filename}</td>
+                        <td>${doc.status}</td>
+                        <td>${doc.error_count ?? 'N/A'}</td>
+                        <td>${new Date(doc.uploaded_at).toLocaleString()}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+                documentsSection.style.display = 'block';
+
+                // Пагинация
+                updatePagination(userId, username, page, documents.length);
+            } catch (error) {
+                console.error('Ошибка:', error);
+                alert('Не удалось загрузить документы');
+            }
+        }
+
+        // Обновление пагинации
+        function updatePagination(userId, username, currentPage, documentsCount) {
+            const pagination = document.getElementById('documents-pagination');
+            pagination.innerHTML = '';
+            const totalPages = Math.ceil(documentsCount / 10); // Предполагаем limit=10
+            if (totalPages <= 1) return;
+
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement('li');
+                li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                li.innerHTML = `<a class="page-link" href="#" onclick="loadDocuments(${userId}, '${username}', ${i})">${i}</a>`;
+                pagination.appendChild(li);
+            }
+        }
+
+        // Загрузка пользователей при загрузке страницы
+        document.addEventListener('DOMContentLoaded', loadUsers);
+    </script>
+</body>
+</html>

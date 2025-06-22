@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка документов</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+    </style>
+</head>
+<body>
+    <header class="main-header flex justify-between items-center p-3 bg-white shadow-sm">
+        <img src="styles/logo.png" alt="Документёр Logo" class="logo-img h-12" />
+        <button class="logout-btn" onclick="window.location.href='login.html'">Войти</button>
+    </header>
+
+    <main>
+        <section class="intro-section">
+            <h1 class="text-xl font-semibold text-gray-800 mb-4">Добро пожаловать в Документёр</h1>
+            <p>
+                Документёр — это удобный сервис для проверки документов в формате .docx.
+                Загружайте ваши файлы, и мы автоматически проверим их на наличие ошибок оформления в соответствием с ГОСТ.
+                После проверки вы сможете скачать исправленный документ или просмотреть подробный отчет об ошибках.
+            </p>
+        </section>
+
+        <section class="form-container">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Проверить документ</h2>
+                    <div id="uploadArea" class="upload-area w-full">
+                        <div class="file-upload border-2 border-dashed border-gray-300 rounded-lg p-8 text-center transition-colors duration-200">
+                            <div class="flex flex-col items-center justify-center">
+                                <svg class="w-12 h-12 text-gray-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                                <p class="text-gray-500 mb-4">Перетащите файл .docx сюда или нажмите кнопку ниже</p>
+                                <input type="file" id="fileInput" accept=".docx" required class="hidden" />
+                                <label for="fileInput" class="cursor-pointer px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700" onclick="window.location.href='login.html'">Выберите файл</label>
+                                <p class="text-xs text-gray-400 mt-3">Поддерживаются только файлы .docx</p>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        © 2025 Документёр. Все права защищены.
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка документов</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+    </style>
+</head>
+<body>
+    <!-- ХЭДЕР -->
+    <header class="main-header flex justify-between items-center p-3 bg-white shadow-sm">
+        <img src="styles/logo.png" alt="Документёр" class="logo-img" />
+        <button class="logout-btn" onclick="logout()">Выйти</button>
+    </header>
+
+    <main class="container mx-auto p-6 max-w-full pt-20">
+        <section>
+            <!-- Upload section с drag-n-drop -->
+            <section class="bg-white rounded-xl shadow-sm p-6 mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Проверить документ</h2>
+                <form id="uploadForm">
+                    <div id="uploadArea" class="upload-area w-full">
+                        <div class="file-upload border-2 border-dashed border-gray-300 rounded-lg p-8 text-center transition-colors duration-200">
+                            <div class="flex flex-col items-center justify-center">
+                                <svg class="w-12 h-12 text-gray-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                                <p class="text-gray-500 mb-4">Перетащите файл .docx сюда или нажмите кнопку ниже</p>
+                                <input type="file" id="fileInput" accept=".docx" required class="hidden" />
+                                <label for="fileInput" class="cursor-pointer px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Выберите файл</label>
+                                <p class="text-xs text-gray-400 mt-3">Поддерживаются только файлы .docx</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="error" class="text-red-600 mt-2 hidden"></p>
+                    <div id="previewArea" class="hidden mt-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Левая часть: зона перетаскивания -->
+                            <div class="file-upload border-2 border-dashed border-gray-300 rounded-lg p-8 text-center transition-colors duration-200">
+                                <div class="flex flex-col items-center justify-center">
+                                    <svg class="w-12 h-12 text-gray-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                    </svg>
+                                    <p class="text-gray-500 mb-4">Перетащите файл .docx сюда или нажмите кнопку ниже</p>
+                                    <label for="fileInput" class="cursor-pointer px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Выберите файл</label>
+                                    <p class="text-xs text-gray-400 mt-3">Поддерживаются только файлы .docx до 10MB</p>
+                                </div>
+                            </div>
+
+                            <!-- Правая часть: предварительный просмотр файла -->
+                            <div id="filePreview" class="border border-gray-200 rounded-lg p-4 flex flex-col justify-between text-gray-500">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <div>
+                                        <p id="fileName" class="text-gray-800 font-medium text-sm"></p>
+                                        <p id="fileSize" class="text-xs text-gray-500"></p>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between mt-4">
+                                    <button type="button" id="clearBtn" class="clear-btn px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-all duration-200 text-sm">Очистить</button>
+                                    <button type="submit" class="upload-btn px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-all duration-200 text-sm">Загрузить</button>
+                                    <p class="error" id="errorMessage">Произошла ошибка при загрузке</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Таблица документов -->
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-gray-800">Ваши документы</h2>
+            </div>
+            <section class="bg-white rounded-xl shadow-sm p-6 overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 text-sm" id="documentsTable">
+                    <thead>
+                        <tr>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase border-r border-gray-200">Имя файла</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase border-r border-gray-200">Статус</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase border-r border-gray-200">Ошибки</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase border-r border-gray-200">Дата загрузки</th>
+                            <th class="px-6 py-4 text-left text-xs font-bold text-gray-500 uppercase border-r border-gray-200">Скачать</th>
+                            <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase border-r border-gray-200"> </th>
+                        </tr>
+                    </thead>
+                    <tbody id="documentsBody" class="min-w-full divide-y divide-gray-200 text-sm text-left "></tbody>
+                </table>
+            </section>
+        </section>
+    </main>
+
+        <!-- ФУТЕР -->
+    <footer class="main-footer text-center p-4 text-gray-500 text-sm">
+        © 2025 Документёр. Все права защищены.
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

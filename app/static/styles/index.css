@@ -1,0 +1,438 @@
+/* Основной стиль для всего документа */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    margin: 0 auto;
+    padding: 2rem;
+    line-height: 1.5;
+}
+
+/* Плавная прокрутка для элементов */
+p {
+    scroll-behavior: smooth;
+}
+
+/* Заголовки */
+h1 {
+    color: #1e293b;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+h2 {
+    color: #334155;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Секция с информацией на главной странице */
+.intro-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.5rem;
+}
+
+.intro-section p {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.75;
+    margin: 1rem 0;
+}
+
+/* Шапка */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Кнопка "Войти" или "Выйти" */
+.logout-btn {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.520rem 1.20rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.logout-btn:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Форма загрузки */
+.form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.5rem;
+}
+
+/* Кастомная кнопка выбора файла */
+.file-input-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 1rem; /* Добавлено для поддержки нескольких кнопок (Очистить/Загрузить) */
+}
+
+.file-input-label {
+    display: inline-block;
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.file-input-label:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.file-input-label:active {
+    transform: translateY(0);
+}
+
+#fileInput {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-name {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+/* Сообщения об ошибках */
+.error {
+    color: #ef4444;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #fee2e2;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    display: none;
+}
+
+/* Таблица документов */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-size: 0.875rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Стили для строки с сообщением о пустом списке документов */
+.empty-row {
+    background-color: #ffffff;
+}
+
+.empty-message {
+    padding: 1.5rem;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Стиль для ячейки с количеством ошибок */
+.error-count-cell {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.error-count-cell:hover {
+    color: #2563eb;
+}
+
+/* Ссылки-действия */
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.actions a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.actions a.delete {
+    color: #ef4444;
+}
+
+.actions a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.actions a.delete:hover {
+    color: #dc2626;
+}
+
+/* Подробности документа */
+.details-row td {
+    background-color: #f8fafc;
+    padding: 1.5rem;
+}
+
+/* Вложенная таблица ошибок */
+.error-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.error-table th,
+.error-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+}
+
+.error-table th {
+    background-color: #f1f5f9;
+    font-weight: 500;
+}
+
+.error-group {
+    margin-bottom: 2rem;
+}
+
+.error-group:last-child {
+    margin-bottom: 0;
+}
+
+.error-details h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.upload-area.highlight {
+    border-color: #3b82f6;
+    background-color: #f0f7ff;
+}
+
+/* Таблица */
+#documentsTable {
+    table-layout: fixed;
+    width: 100%;
+}
+
+#documentsTable td:nth-child(1) { /* Колонка с именем файла */
+    min-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#documentsTable th:nth-child(2), /* Статус */
+#documentsTable th:nth-child(3), /* Ошибки */
+#documentsTable th:nth-child(4) { /* Дата загрузки */
+    width: 17%;
+    min-width: 100px;
+}
+
+#documentsTable th:nth-child(5) { /* Скачать */
+    width: 20%;
+    min-width: 120px;
+}
+
+#documentsTable th:nth-child(6) { /* Удалить */
+    width: 10%;
+    min-width: 80px;
+}
+
+/* Центрирование кнопки удалить */
+#documentsTable td:last-child {
+    text-align: center;
+}
+
+/* Стиль для кнопки удалить */
+.delete-btn {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #fee2e2; /* Легкий красный фон при наведении */
+}
+
+.status-FAILED {
+    background-color: #fef2f2;
+    color: #dc2626;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.status-CHECKED {
+    background-color: #ecfdf5;
+    color: #059669;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.status-PENDING {
+    background-color: #eff6ff;
+    color: #2563eb;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+/* ХЭДЕР С ЛОГОТИПОМ */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    border-radius: 0;
+}
+
+/* Основной контент */
+main {
+    padding-top: 80px;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e40af;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-img {
+    height: 52px;
+}
+
+/* ФУТЕР */
+.main-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem 0;
+    font-size: 0.875rem;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Стили для зоны загрузки файла */
+.file-upload {
+    border: 2px dashed #e2e8f0;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.file-upload:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.file-upload.drag-over {
+    background-color: #e0f2fe;
+    border-color: #7dd3fc;
+}
+
+/* Стили для области предпросмотра файла */
+.file-preview {
+    text-align: center;
+    padding: 1rem;
+}
+
+.file-preview.hidden {
+    display: none;
+}
+
+.error-item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Стили для скрытых элементов */
+.hidden {
+    display: none;
+}

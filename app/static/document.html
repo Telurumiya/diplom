@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали документа</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2, h3 {
+            color: #333;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .document-info {
+            margin-bottom: 20px;
+        }
+        .error {
+            color: red;
+            margin: 10px 0;
+        }
+        .error-group {
+            margin-bottom: 20px;
+        }
+        .error-group h3 {
+            cursor: pointer;
+            color: #007bff;
+            margin: 0;
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+        .error-group h3:hover {
+            background-color: #e0e0e0;
+        }
+        .error-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            display: none;
+        }
+        .error-table.active {
+            display: table;
+        }
+        .error-table th, .error-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .error-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <a href="/app/statichtml" class="back-link">← Назад к списку</a>
+    <div id="documentInfo" class="document-info"></div>
+    <p id="error" class="error" style="display: none;"></p>
+    <div id="errorsContainer"></div>
+
+    <script>
+        // Базовый URL API из config.py
+        const API_URL = 'http://localhost:8000/api';
+
+        // Проверка авторизации
+        async function checkAuth() {
+            try {
+                const response = await fetch(`${API_URL}/user/profile`, {
+                    credentials: 'include' // Отправляем cookies
+                });
+                if (!response.ok) throw new Error('Не авторизован');
+            } catch (err) {
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Получение ID из URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const documentId = urlParams.get('id');
+
+        // Форматирование даты
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('ru-RU', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        // Загрузка деталей документа
+        async function loadDocument() {
+            try {
+                const response = await fetch(`${API_URL}/documents/${documentId}`, {
+                    credentials: 'include'
+                });
+                if (!response.ok) throw new Error('Ошибка при загрузке документа');
+                const document = await response.json();
+                renderDocument(document);
+            } catch (err) {
+                document.getElementById('error').textContent = err.message;
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+
+        // Отрисовка информации о документе и ошибок
+        function renderDocument(document) {
+            // Информация о документе
+            const infoDiv = document.getElementById('documentInfo');
+            infoDiv.innerHTML = `
+                <h2>${document.filename}</h2>
+                <p><strong>Статус:</strong> ${document.status}</p>
+                <p><strong>Количество ошибок:</strong> ${document.error_count ?? '—'}</p>
+                <p><strong>Дата загрузки:</strong> ${formatDate(document.uploaded_at)}</p>
+            `;
+
+            // Ошибки
+            const errorsContainer = document.getElementById('errorsContainer');
+            if (document.errors) {
+                errorsContainer.innerHTML = '<h3>Ошибки</h3>';
+                Object.entries(document.errors).forEach(([type, errors]) => {
+                    const groupDiv = document.createElement('div');
+                    groupDiv.className = 'error-group';
+                    groupDiv.innerHTML = `
+                        <h3 onclick="toggleErrors(this)">${type} (${errors.length})</h3>
+                        <table class="error-table">
+                            <thead>
+                                <tr>
+                                    <th>Ошибки</th>
+                                    <th>Текст</th>
+                                    <th>Индекс</th>
+                                    <th>Тип элемента</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${errors.map(error => `
+                                    <tr>
+                                        <td>${error.message}</td>
+                                        <td>${error.paragraph_text}</td>
+                                        <td>${error.index}</td>
+                                        <td>${error.element_type}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `;
+                    errorsContainer.appendChild(groupDiv);
+                });
+            }
+        }
+
+        // Переключение видимости таблицы ошибок
+        function toggleErrors(header) {
+            const table = header.nextElementSibling;
+            table.classList.toggle('active');
+        }
+
+        // Инициализация
+        if (documentId) {
+            checkAuth().then(loadDocument);
+        } else {
+            document.getElementById('error').textContent = 'ID документа не указан';
+            document.getElementById('error').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

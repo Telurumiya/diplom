@@ -1,0 +1,709 @@
+[
+  {
+    "type": "code",
+    "message": "В коде отступ первой строки не допускается.",
+    "paragraph_text": "excluded_paragraphs = create_excluded_paragraphs(",
+    "index": 239,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "code",
+    "message": "В коде выравнивание должно быть по левому краю.",
+    "paragraph_text": "excluded_paragraphs = create_excluded_paragraphs(",
+    "index": 239,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "code",
+    "message": "В коде выравнивание должно быть по левому краю.",
+    "paragraph_text": "[], structural_paragraphs, appendix_paragraphs, listing_paragraphs,",
+    "index": 240,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "code",
+    "message": "В коде отступ первой строки не допускается.",
+    "paragraph_text": "[], structural_paragraphs, appendix_paragraphs, listing_paragraphs,",
+    "index": 240,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "code",
+    "message": "В коде отступ первой строки не допускается.",
+    "paragraph_text": "table_captions, image_captions, []",
+    "index": 241,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "structure",
+    "message": "Повторяющаяся буква приложения: 'В'.",
+    "paragraph_text": "Приложение В",
+    "index": 279,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "code",
+    "message": "В коде размер шрифта должен быть 12 pt.",
+    "paragraph_text": "excluded_paragraphs = create_excluded_paragraphs(",
+    "index": 283,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "code",
+    "message": "В коде выравнивание должно быть по левому краю.",
+    "paragraph_text": "excluded_paragraphs = create_excluded_paragraphs(",
+    "index": 283,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "code",
+    "message": "В коде размер шрифта должен быть 12 pt.",
+    "paragraph_text": "[], structural_paragraphs, appendix_paragraphs, listing_paragraphs,",
+    "index": 284,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "code",
+    "message": "В коде выравнивание должно быть по левому краю.",
+    "paragraph_text": "[], structural_paragraphs, appendix_paragraphs, listing_paragraphs,",
+    "index": 284,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "structure",
+    "message": "Отсутствует правильно оформленный обязательный структурный элемент: Заключение.",
+    "paragraph_text": "Заключение",
+    "index": 0,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "listing",
+    "message": "У подписи листинга отступ первой строки не допускается.",
+    "paragraph_text": "Листинг 1 – Программный код",
+    "index": 238,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "listing",
+    "message": "У подписи листинга недопустимы жирный или курсив.",
+    "paragraph_text": "Листинг 1 – Программный код",
+    "index": 282,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "listing",
+    "message": "У подписи листинга недопустимы жирный или курсив.",
+    "paragraph_text": "Листинг 2 – Программный код",
+    "index": 293,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "format",
+    "message": "В тексте обнаружены двойные пробелы. Допускается только один пробел между словами.",
+    "paragraph_text": "Проверка  на соответствие документов правилам и нормам, установленным внутри учебного учреждения, и ГОСТам осуществляется преподавателями вручную.",
+    "index": 12,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "Перед заголовком должно быть две пустые строки, если он не находится на первой строке страницы.",
+    "paragraph_text": "1 Проектирование системы",
+    "index": 19,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "Перед заголовком должно быть две пустые строки, если он не находится на первой строке страницы.",
+    "paragraph_text": "1.2.1 Пункт",
+    "index": 32,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "После заголовка должно быть две пустые строки.",
+    "paragraph_text": "1.2.1 Пункт",
+    "index": 32,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "Уровень заголовка (1.2.1.1) превышает допустимый (максимум 3 уровня).",
+    "paragraph_text": "1.2.1.1 Пункт",
+    "index": 34,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "Нарушена последовательность нумерации заголовка. Ожидалось '1.3'.",
+    "paragraph_text": "1.4 Подзаголовок",
+    "index": 39,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "Перед заголовком должно быть две пустые строки, если он не находится на первой строке страницы.",
+    "paragraph_text": "1.4 Подзаголовок",
+    "index": 39,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "После заголовка должно быть две пустые строки.",
+    "paragraph_text": "2 Заголовок",
+    "index": 45,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "Заголовок должен начинаться с заглавной буквы.",
+    "paragraph_text": "3 заголовок",
+    "index": 54,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "Перед заголовком должно быть две пустые строки, если он не находится на первой строке страницы.",
+    "paragraph_text": "3 заголовок",
+    "index": 54,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "После заголовка должно быть две пустые строки.",
+    "paragraph_text": "3 заголовок",
+    "index": 54,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "Нарушена последовательность нумерации заголовка. Ожидалось '5'.",
+    "paragraph_text": "3 Рисунки",
+    "index": 80,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "Нарушена последовательность нумерации заголовка. Ожидалось '4'.",
+    "paragraph_text": "5 Списки",
+    "index": 120,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "Перед заголовком должно быть две пустые строки, если он не находится на первой строке страницы.",
+    "paragraph_text": "5 Списки",
+    "index": 120,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "list",
+    "message": "Список использует текстовый набор. Ожидается стандартный стиль списков Word.",
+    "paragraph_text": "- Текстовый список,",
+    "index": 140,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "list",
+    "message": "Список использует текстовый набор. Ожидается стандартный стиль списков Word.",
+    "paragraph_text": "1. Ещё один текстовый список,",
+    "index": 141,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "list",
+    "message": "Список использует текстовый набор. Ожидается стандартный стиль списков Word.",
+    "paragraph_text": "а) и ещё один текстовый список.",
+    "index": 142,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "list",
+    "message": "Недопустимый маркер в маркированном списке. Ожидается стандартный стиль списков Word: '‒'.",
+    "paragraph_text": "Один,",
+    "index": 128,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "list",
+    "message": "Недопустимый маркер в маркированном списке. Ожидается стандартный стиль списков Word: '‒'.",
+    "paragraph_text": "Два,",
+    "index": 129,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "list",
+    "message": "Недопустимый маркер в маркированном списке. Ожидается стандартный стиль списков Word: '‒'.",
+    "paragraph_text": "Три,",
+    "index": 130,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "list",
+    "message": "Нумерованный префикс '1)' в списке первого уровня должен быть в формате 'X.'.",
+    "paragraph_text": "Январь,",
+    "index": 133,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "list",
+    "message": "Нумерованный префикс '2)' в списке первого уровня должен быть в формате 'X.'.",
+    "paragraph_text": "Февраль.",
+    "index": 134,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "list",
+    "message": "В списке используется недопустимый формат. Разрешены только 1 2 3 и т.д.",
+    "paragraph_text": "Август,",
+    "index": 136,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "list",
+    "message": "В списке используется недопустимый формат. Разрешены только 1 2 3 и т.д.",
+    "paragraph_text": "Сентябрь.",
+    "index": 137,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "format",
+    "message": "Инициалы автора должны быть в формате 'И.О.' с заглавной буквы и без пробела между точками.",
+    "paragraph_text": "Смирнов, д.А. Как выучить python за три дня : пояснение / Д.А. Смирнов. – Москва : Академия, 2021. – 250 с.",
+    "index": 169,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "format",
+    "message": "Сведения об ответственности должны быть в формате 'И.О. Фамилия'.",
+    "paragraph_text": "Смирнов, А.А. История России : пояснение / д.А. Смирнов. – Москва : Академия, 2021. – С. 10-50.",
+    "index": 170,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "format",
+    "message": "ISBN должен быть в формате 'ххх-х-ххх-ххххх-х.",
+    "paragraph_text": "Сидоров, А.Б. Астрология : справочник / А.Б. Сидоров. – Москва : Наука, 2020. – 150 с. – ISBN 978-5-11123-178-4.",
+    "index": 171,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "format",
+    "message": "Обнаружены повторяющиеся знаки препинания: ,.",
+    "paragraph_text": "Иванов,, А.Б. Математика / А.Б. Иванов. – Санкт-Петербург : Наука, 2020. – 300 с.",
+    "index": 172,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "format",
+    "message": "Библиографическая запись не соответствует допустимому формату.",
+    "paragraph_text": "Иванов,, А.Б. Математика / А.Б. Иванов. – Санкт-Петербург : Наука, 2020. – 300 с.",
+    "index": 172,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "format",
+    "message": "Сведения об ответственности должны быть в формате 'И.О. Фамилия'.",
+    "paragraph_text": "Петров, И.В. Физика : учебник / И.в. Петров, А.Г. Сидоров. – Казань : Университет, 2022. – 400 с.",
+    "index": 173,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "format",
+    "message": "Библиографическая запись не соответствует допустимому формату.",
+    "paragraph_text": "Сидоров, В.К. аимия : основы / В.К. Сидоров. – [2-е изд., перераб.] – Екатеринбург : Урал, 2019. – 150 с.",
+    "index": 174,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "format",
+    "message": "Библиографическая запись не соответствует допустимому формату.",
+    "paragraph_text": "Кузнецов,М.П. Биология : справочник / М.П. Кузнецов. – Москва : Просвещение, 2023. – 500 с. – ISBN 978-5-123-12178-4.",
+    "index": 175,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "format",
+    "message": "Сведения об объеме должны быть в формате 'X с.' или 'С. X-Y'.",
+    "paragraph_text": "Фомин, А.В. Экономика / А.В. Фомин. – Москва : Финансы, 2022. – 100с.",
+    "index": 180,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "format",
+    "message": "Тип ресурса должен быть указан как [сайт].",
+    "paragraph_text": "Газета.Ру : [пусто] / учредитель АО «Газета.Ру». – москва, 1999 – URL: https://www.gazeta.ru (дата обращения: 15.04.2018). – Текст : электронный.",
+    "index": 182,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "format",
+    "message": "Название города должно быть написано корректно.",
+    "paragraph_text": "Газета.Ру : [пусто] / учредитель АО «Газета.Ру». – москва, 1999 – URL: https://www.gazeta.ru (дата обращения: 15.04.2018). – Текст : электронный.",
+    "index": 182,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "list",
+    "message": "Элемент списка должен заканчиваться на тот же символ, что и первый элемент.",
+    "paragraph_text": "стабильность и однородность результатов;",
+    "index": 125,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "table",
+    "message": "Подпись таблицы не должна иметь отступ первой строки.",
+    "paragraph_text": "Таблица 1 – Пример с отступом и выравниванием подписи",
+    "index": 66,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "table",
+    "message": "Подпись таблицы должна быть выровнена по левому краю.",
+    "paragraph_text": "Таблица 1 – Пример с отступом и выравниванием подписи",
+    "index": 66,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "table",
+    "message": "Подпись таблицы не должна оканчиваться знаком препинания",
+    "paragraph_text": "Таблица 2 – Пример с точкой.",
+    "index": 68,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "table",
+    "message": "В подписи таблицы интервал перед или после абзаца не допускается.",
+    "paragraph_text": "Таблица 3 – Пример интервала",
+    "index": 70,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "table",
+    "message": "Нарушена сквозная нумерация таблиц в основном документе. Ожидалось 'Таблица 4', получено 'Таблица 5'",
+    "paragraph_text": "Таблица 5 – Пример проверки последовательности",
+    "index": 72,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "table",
+    "message": "Нарушена нумерация таблиц в разделе 4. Ожидалось 'Таблица 4.1', получено 'Таблица 1.1'",
+    "paragraph_text": "Таблица 1.1 – Пример проверки на одинаковый формат",
+    "index": 74,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "table",
+    "message": "Подпись таблицы использует отличный формат от предыдущей подписи таблицы. Ожидается: Таблица X – Название",
+    "paragraph_text": "Таблица 1.1 – Пример проверки на одинаковый формат",
+    "index": 74,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "table",
+    "message": "Некорректная подпись таблицы. Ожидаемый формат: Таблица Y.X – Название, где Y - буква приложения",
+    "paragraph_text": "Таблица 1 – Пробная таблица",
+    "index": 213,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "table",
+    "message": "В приложении 'А' подпись таблицы должна начинаться с 'А.'",
+    "paragraph_text": "Таблица Б.1 – Пробная таблица",
+    "index": 217,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "table",
+    "message": "Перед таблицей отсутствует подпись в формате 'Таблица X – Название', 'Продолжение таблицы X' или 'Окончание таблицы X'.",
+    "paragraph_text": "",
+    "index": 0,
+    "element_type": "table"
+  },
+  {
+    "type": "table",
+    "message": "После таблицы не должно быть пустой строки.",
+    "paragraph_text": "",
+    "index": 0,
+    "element_type": "table"
+  },
+  {
+    "type": "table",
+    "message": "Перед таблицей отсутствует подпись в формате 'Таблица X – Название', 'Продолжение таблицы X' или 'Окончание таблицы X'.",
+    "paragraph_text": "",
+    "index": 6,
+    "element_type": "table"
+  },
+  {
+    "type": "table",
+    "message": "После таблицы не должно быть пустой строки.",
+    "paragraph_text": "",
+    "index": 7,
+    "element_type": "table"
+  },
+  {
+    "type": "table",
+    "message": "После таблицы не должно быть пустой строки.",
+    "paragraph_text": "",
+    "index": 8,
+    "element_type": "table"
+  },
+  {
+    "type": "image",
+    "message": "Изображение не должно иметь отступ первой строки.",
+    "paragraph_text": "",
+    "index": 84,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "После изображения отсутствует подпись в формате 'Рисунок X – Название' или 'Рисунок Y.X – Название', где Y - номер заголовка, X - порядовый номер изображения.",
+    "paragraph_text": "",
+    "index": 84,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Изображение не выровнено по центру.",
+    "paragraph_text": "",
+    "index": 87,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Перед изображением не должно быть пустой строки.",
+    "paragraph_text": "",
+    "index": 87,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "После подписи изображения не должно быть пустой строки",
+    "paragraph_text": "Рисунок 2 – Отступ у изображения и пустая строка после подписи",
+    "index": 91,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Подпись изображения не должна иметь отступ первой строки.",
+    "paragraph_text": "Рисунок 3 – Выравнивание и отступ у подписи",
+    "index": 95,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Подпись изображения должна быть выровнена по центру.",
+    "paragraph_text": "Рисунок 3 – Выравнивание и отступ у подписи",
+    "index": 95,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "У подписи изображения шрифт должен быть Times New Roman",
+    "paragraph_text": "Рисунок 4 – Точка в конце и другой шрифт.",
+    "index": 98,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Подпись изображения не должна оканчиваться знаком препинания",
+    "paragraph_text": "Рисунок 4 – Точка в конце и другой шрифт.",
+    "index": 98,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Подпись изображения не должна быть полужирной",
+    "paragraph_text": "Рисунок 5 – Жирность и межстрочный интервал",
+    "index": 102,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "У подписи изображения межстрочный интервал должен быть 1.5",
+    "paragraph_text": "Рисунок 5 – Жирность и межстрочный интервал",
+    "index": 102,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Нарушена сквозная нумерация изображений в основном документе. Ожидалось 'Рисунок 6', получено 'Рисунок 5'",
+    "paragraph_text": "Рисунок 5 – Нарушение последовательности",
+    "index": 105,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Нарушена нумерация изображений в разделе 3. Ожидалось 'Рисунок 3.1', получено 'Рисунок 5.1'",
+    "paragraph_text": "Рисунок 5.1 – Отличающийся формат",
+    "index": 108,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Подпись изображения использует отличный формат от предыдущей подписи изображения. Ожидается: Рисунок X – Название",
+    "paragraph_text": "Рисунок 5.1 – Отличающийся формат",
+    "index": 108,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "После изображения отсутствует подпись в формате 'Рисунок X – Название' или 'Рисунок Y.X – Название', где Y - номер заголовка, X - порядовый номер изображения.",
+    "paragraph_text": "",
+    "index": 110,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Некорректная подпись изображения. Ожидаемый формат: Рисунок X – Название или Рисунок Y.X – Название",
+    "paragraph_text": "Рисунок 7. – Неправильный формат подписи",
+    "index": 111,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "heading",
+    "message": "После изображения отсутствует подпись в формате 'Рисунок X – Название' или 'Рисунок Y.X – Название', где Y - номер заголовка, X - порядовый номер изображения.",
+    "paragraph_text": "",
+    "index": 113,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Некорректная подпись изображения. Ожидаемый формат: Рисунок X – Название или Рисунок Y.X – Название",
+    "paragraph_text": "Рисунок 8 – маленькая буква",
+    "index": 114,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Подпись изображения использует отличный формат от предыдущей подписи изображения. Ожидается: Рисунок Y.X – Название",
+    "paragraph_text": "Рисунок 9 – Курсив",
+    "index": 117,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Нарушена сквозная нумерация изображений в основном документе. Ожидалось 'Рисунок 7', получено 'Рисунок 9'",
+    "paragraph_text": "Рисунок 9 – Курсив",
+    "index": 117,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "Подпись изображения не должна быть курсивом",
+    "paragraph_text": "Рисунок 9 – Курсив",
+    "index": 117,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "В приложении 'В' подпись изображения должна начинаться с 'В.'",
+    "paragraph_text": "Рисунок А.1 – Приложение",
+    "index": 233,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "В приложении 'В' подпись изображения должна начинаться с 'В.'",
+    "paragraph_text": "Рисунок Б.2 – Приложение",
+    "index": 236,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "image",
+    "message": "После подписи изображения не должно быть пустой строки",
+    "paragraph_text": "Рисунок Б.2 – Приложение",
+    "index": 236,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце текст должен быть выровнен по ширине.",
+    "paragraph_text": "В современном мире оформление текстовых документов является одним из ключевых аспектов деятельности организаций в самых различных направлениях.",
+    "index": 7,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце межстрочный интервал должен быть 1.5.",
+    "paragraph_text": "С каждым годом число текстовых документов увеличивается.",
+    "index": 8,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце отступ слева не допускается.",
+    "paragraph_text": "При этом, каждый тип документа имеет свои собственные стандарты и правила оформления, а существующие текстовые редакторы не оснащены функционалом для полноценного анализа по всем необходимым требованиям.",
+    "index": 9,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце интервал перед или после абзаца не допускается.",
+    "paragraph_text": "Отдельно стоит отметить документы учебного характера, которые создаются учащимися разных организаций.",
+    "index": 10,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце отступ первой строки должен быть 1.25 см.",
+    "paragraph_text": "Успешное прохождение нормоконтроля курсовых, выпускных и прочих работ является обязательным для сдачи.",
+    "index": 11,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце размер шрифта должен быть 14 pt.",
+    "paragraph_text": "Однако такая проверка — трудоемкий процесс, требующий значительных усилий, а человеческий фактор приводит к пропуску ошибок.",
+    "index": 13,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце шрифт должен быть Times New Roman.",
+    "paragraph_text": "В случае нахождения несоответствий правилам, документ возвращается на доработку, что впоследствии приводит к увеличению временных затрат и ресурсов как у проверяющего, так и у автора.",
+    "index": 14,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце недопустим жирный шрифт.",
+    "paragraph_text": "Таким образом возникает необходимость в автоматизации процесса и создании системы, которая позволит сократить затраты на человеческие ресурсы, а также осуществит анализ с высокой точностью и обеспечит единообразие стилей документации.",
+    "index": 15,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце недопустим курсив.",
+    "paragraph_text": "Под автоматизированной системой в данном контексте понимается программное средство, способное без участия человека (или с его минимальным участием) выполнять анализ текстовых документов по заданным параметрам, выявлять несоответствия установленным требованиям и формировать отчёт о нарушениях.",
+    "index": 16,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце недопустимо подчёркивание.",
+    "paragraph_text": "Такие системы обладают способностью к воспроизводимой, быстрой и объективной проверке, что делает их особенно полезными в условиях высокой нагрузки и строгих регламентов.",
+    "index": 17,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце отступ первой строки должен быть 1.25 см.",
+    "paragraph_text": "Таблицы .6 – Проверка",
+    "index": 76,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце интервал перед или после абзаца не допускается.",
+    "paragraph_text": "Таблицы .6 – Проверка",
+    "index": 76,
+    "element_type": "paragraph"
+  },
+  {
+    "type": "text",
+    "message": "В абзаце текст должен быть выровнен по ширине.",
+    "paragraph_text": "Таблицы .6 – Проверка",
+    "index": 76,
+    "element_type": "paragraph"
+  }
+]
